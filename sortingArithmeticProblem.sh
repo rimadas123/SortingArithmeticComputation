@@ -3,20 +3,8 @@
 echo "Welcome to Arithmetic Computation & Sorting Computation"
 
 echo -n "Enter 1st number"
-read a
+read firstInput
 echo -n "Enter 2nd number"
-read b
+read secondInput
 echo -n "Enter 3rd number"
-read c
-
-#compute usecase-2
-
-calculate=$(( $a + ($b * $c) ))
-echo $calculate
-
-#compute usecase-3
-
-calculateSecond=$(( ($a * $b) + $c ))
-echo $calculateSecond
-
-
+read thirdInput
