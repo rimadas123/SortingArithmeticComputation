@@ -8,3 +8,7 @@ echo -n "Enter 2nd number"
 read secondInput
 echo -n "Enter 3rd number"
 read thirdInput
+
+#Compute first arithematic operation
+firstResult=`echo "$firstInput + $secondInput * $thirdInput" | bc`
+echo $firstResult
