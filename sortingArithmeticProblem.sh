@@ -9,5 +9,8 @@ read b
 echo -n "Enter 3rd number"
 read c
 
+#compute usecase-2
 
+calculate=$(( $a + ($b * $c) ))
+echo $calculate
 
