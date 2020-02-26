@@ -14,3 +14,9 @@ read c
 calculate=$(( $a + ($b * $c) ))
 echo $calculate
 
+#compute usecase-3
+
+calculateSecond=$(( ($a * $b) + $c ))
+echo $calculateSecond
+
+
