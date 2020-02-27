@@ -1,5 +1,7 @@
 #!/bin/bash
 
+declare -A result
+
 echo "Welcome to Arithmetic Computation & Sorting Computation"
 
 echo -n "Enter 1st number"
@@ -25,3 +27,7 @@ echo $thirdResult
 fourthResult=`echo "scale=2;$firstInput % $secondInput + $thirdInput" | bc -l`
 echo $fourthResult
 
+result[1]=$firstResult
+result[2]=$secondResult
+result[3]=$thirdResult
+result[4]=$fourthResult
