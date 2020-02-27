@@ -10,13 +10,18 @@ echo -n "Enter 3rd number"
 read thirdInput
 
 #Compute first arithematic operation
-firstResult=`echo "$firstInput + $secondInput * $thirdInput" | bc`
+firstResult=`echo "scale=2;$firstInput + $secondInput * $thirdInput" | bc -l`
 echo $firstResult
 
 #Compute second arithematic operation
-secondResult=`echo "$firstInput * $secondInput + $thirdInput" | bc`
+secondResult=`echo "scale=2;$firstInput * $secondInput + $thirdInput" | bc -l`
 echo $secondResult
 
 #Compute third arithematic operation
-thirdResult=`echo "$thirdInput + $firstInput / $secondInput" | bc`
+thirdResult=`echo "scale=2;$thirdInput + $firstInput / $secondInput" | bc -l`
 echo $thirdResult
+
+#Compute Fourth arithematic operation
+fourthResult=`echo "scale=2;$firstInput % $secondInput + $thirdInput" | bc -l`
+echo $fourthResult
+
