@@ -12,3 +12,7 @@ read thirdInput
 #Compute first arithematic operation
 firstResult=`echo "$firstInput + $secondInput * $thirdInput" | bc`
 echo $firstResult
+
+#Compute second arithematic operation
+secondResult=`echo "$firstInput * $secondInput + $thirdInput" | bc`
+echo $secondResult
