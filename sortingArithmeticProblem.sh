@@ -16,3 +16,7 @@ echo $firstResult
 #Compute second arithematic operation
 secondResult=`echo "$firstInput * $secondInput + $thirdInput" | bc`
 echo $secondResult
+
+#Compute third arithematic operation
+thirdResult=`echo "$thirdInput + $firstInput / $secondInput" | bc`
+echo $thirdResult
