@@ -13,21 +13,26 @@ read thirdInput
 
 #Compute first arithematic operation
 firstResult=`echo "scale=2;$firstInput + $secondInput * $thirdInput" | bc -l`
-echo $firstResult
+#echo $firstResult
 
 #Compute second arithematic operation
 secondResult=`echo "scale=2;$firstInput * $secondInput + $thirdInput" | bc -l`
-echo $secondResult
+#echo $secondResult
 
 #Compute third arithematic operation
 thirdResult=`echo "scale=2;$thirdInput + $firstInput / $secondInput" | bc -l`
-echo $thirdResult
+#echo $thirdResult
 
 #Compute Fourth arithematic operation
 fourthResult=`echo "scale=2;$firstInput % $secondInput + $thirdInput" | bc -l`
-echo $fourthResult
+#echo $fourthResult
 
 result[1]=$firstResult
 result[2]=$secondResult
 result[3]=$thirdResult
 result[4]=$fourthResult
+
+for index in "${result[@]}"
+do
+   echo "Results: ${index}" 
+done
