@@ -1,6 +1,7 @@
 #!/bin/bash
 
 declare -A result
+declare -a array
 
 echo "Welcome to Arithmetic Computation & Sorting Computation"
 
@@ -27,12 +28,32 @@ thirdResult=`echo "scale=2;$thirdInput + $firstInput / $secondInput" | bc -l`
 fourthResult=`echo "scale=2;$firstInput % $secondInput + $thirdInput" | bc -l`
 #echo $fourthResult
 
+#Storing result in result using dictionary
 result[1]=$firstResult
 result[2]=$secondResult
 result[3]=$thirdResult
 result[4]=$fourthResult
 
-for index in "${result[@]}"
+#reading values from result to array
+length="${#result[@]}"
+for ((index1=0; $index1<$length; index1++))
 do
-   echo "Results: ${index}" 
+   array[index1]=${result[$((index1+1))]}
 done
+echo "array:${array[@]}"
+
+#Sort results in descending order
+ length1="${#array[@]}"
+   for (( i=0; i<$length1; i++ ))
+   do
+      for (( j=0; j<$length1-1; j++ ))
+      do
+         if (( $(echo "${array[j]} < ${array[j+1]}" |bc -l) ))
+         then
+            temp=${array[j]}
+            array[j]=${array[j+1]}
+            array[j+1]=$temp
+         fi
+      done
+   done
+echo "Sorted in descending:"${array[@]}
